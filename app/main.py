@@ -40,3 +40,5 @@ def apply():
 
         return "Application submitted successfully!"
     return render_template('form.html')
+app.run(host='0.0.0.0',port=80)
+
