@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
 import boto3
 import uuid
+REGION = 'ap-south-1'  
 
 app = Flask(__name__)
-dynamodb = boto3.resource('dynamodb')
-s3 = boto3.client('s3')
-sns = boto3.client('sns')
+dynamodb = boto3.resource('dynamodb', region_name=REGION)
+s3 = boto3.client('s3', region_name=REGION)
+sns = boto3.client('sns', region_name=REGION)
 
 TABLE_NAME = 'Applications'
 BUCKET_NAME = 'job-application-resumesproject1'
