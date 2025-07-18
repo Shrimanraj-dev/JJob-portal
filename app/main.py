@@ -9,8 +9,8 @@ s3 = boto3.client('s3', region_name=REGION)
 sns = boto3.client('sns', region_name=REGION)
 
 TABLE_NAME = 'Applications'
-BUCKET_NAME = 'job-application-resumesproject1'
-TOPIC_ARN = 'arn:aws:sns:ap-south-1:009160062960:job-application-topic'
+BUCKET_NAME = 'job-application-resumesproject11807'
+TOPIC_ARN = 'arn:aws:sns:ap-south-1:845488705635:job-application-topic'
 
 @app.route('/', methods=['GET', 'POST'])
 def apply():
