@@ -1,10 +1,12 @@
-Project Title: Job Portal Web Application (AWS Based)
+\# 🧾 Job Portal Web Application (AWS Based)
 
 
 
-Overview:
+\## 📌 Overview
 
-This project is a cloud-based Job Portal where users can submit their Name, Email, and Resume. The application is hosted on AWS EC2 instances behind a Load Balancer with Auto Scaling, and it uses S3, DynamoDB, and SNS for backend services.
+
+
+This project is a cloud-based \*\*Job Portal\*\* where users can submit their \*\*Name\*\*, \*\*Email\*\*, and \*\*Resume\*\*. The application is hosted on \*\*AWS EC2\*\* instances behind a \*\*Load Balancer\*\* with \*\*Auto Scaling\*\*, and it uses \*\*S3\*\*, \*\*DynamoDB\*\*, and \*\*SNS\*\* for backend services.
 
 
 
@@ -12,11 +14,15 @@ The project demonstrates how to integrate various AWS services to build a scalab
 
 
 
-Folder Structure:
+---
 
 
 
-jjob-portal/
+\## 🗂️ Folder Structure
+
+
+
+job-portal/
 
 ├── app/
 
@@ -26,97 +32,73 @@ jjob-portal/
 
 │       └── form.html
 
-├── README.md
+├── README.md 
 
 
 
-Features :
 
 
+---
 
-Responsive job application form
 
 
+\## 🚀 Features
 
-File upload support (Resume PDF/doc)
 
 
+\- Responsive job application form
 
-Resume stored in Amazon S3
+\- File upload support (Resume)
 
+\- Resume stored in \*\*Amazon S3\*\*
 
+\- Applicant data stored in \*\*DynamoDB\*\*
 
-Applicant data stored in DynamoDB
+\- Application ID generated using UUID
 
+\- Real-time notification using \*\*SNS Topic\*\*
 
+\- Scalable backend using \*\*Auto Scaling\*\* and \*\*Application Load Balancer\*\*
 
-Application ID generated using UUID
 
 
+---
 
-Real-time notification using SNS Topic
 
 
+\## 🔧 Setup Instructions
 
-Scalable backend using Auto Scaling and Application Load Balancer
 
 
+\### 1. Create S3 Bucket
 
-Setup Instructions:
+\- Name: `your-resume-bucket`
 
-1\. Prepare Your Code
+\- Enable public access or use pre-signed URLs
 
-Create a GitHub repository with the folder structure above
 
 
+\### 2. Create DynamoDB Table
 
-Add Flask app, HTML form, and bash script
+\- Table Name: `JobApplications`
 
+\- Partition Key: `application\_id` (String)
 
 
-2\. Create an S3 Bucket
 
-Name: your-resume-bucket
+\### 3. Create SNS Topic
 
+\- Name: `JobApplicationTopic`
 
+\- Add your email as a subscriber and confirm it
 
-Enable public access or use pre-signed URLs if needed
 
 
+\### 4. Prepare EC2 Launch Template Script (`launch\_template.sh`)
 
-3\. Create a DynamoDB Table
 
-Table Name: JobApplications
 
-
-
-Partition Key: application\_id (String)
-
-
-
-4\. Create SNS Topic
-
-Name: JobApplicationTopic
-
-
-
-Add your email as a subscriber and confirm it
-
-
-
-5\. Prepare Launch Template Script (launch\_template.sh)
-
-Install Python, Flask
-
-
-
-Pull code from GitHub
-
-
-
-Run the Flask server
-
-
+```bash
 
 \#!/bin/bash
 
@@ -124,91 +106,69 @@ sudo yum update -y
 
 sudo yum install -y python3 git
 
-git clone https://github.com/yourusername/job-portal.git
+git clone https://github.com/Shrimanraj-dev/JJob-portal.git
 
-cd job-portal/app
+cd JJob-portal/app
 
-pip3 install -r ../requirements.txt
+pip3 install flask boto3
 
 python3 main.py
 
 
 
-6\. Launch Template
+5\. Create Launch Template
 
-Use the above bash script in the User Data section
-
-
-
-7\. Create Load Balancer + Auto Scaling Group
-
-Attach the launch template
+Add the above script in the User Data
 
 
 
-Set minimum/maximum instance count
+6\. Create Load Balancer \& Auto Scaling Group
+
+Attach the Launch Template
 
 
 
-8\. Security Groups
-
-Allow HTTP (port 80) and SSH (port 22)
+Set Min/Max EC2 count
 
 
 
-Ensure proper IAM role with permissions:
+7\. Assign IAM Role to EC2
+
+With permissions:
 
 
 
-&nbsp; AmazonS3FullAccess
+AmazonS3FullAccess
 
 
 
-&nbsp; AmazonDynamoDBFullAccess
+AmazonDynamoDBFullAccess
 
 
 
-&nbsp; AmazonSNSFullAccess
+AmazonSNSFullAccess
 
 
 
-Skills and Tools Demonstrated :
+🛠️ Skills and Tools Demonstrated
+
+AWS EC2, S3, SNS, DynamoDB
 
 
 
-AWS EC2
+IAM Roles and Policies
 
 
 
-AWS Launch Template
+Auto Scaling \& Load Balancer
 
 
 
-Auto Scaling and Load Balancer
+Flask (Python)
 
 
 
-Amazon S3 (Object Storage)
-
-
-
-Amazon DynamoDB (NoSQL Database)
-
-
-
-Amazon SNS (Notification Service)
-
-
-
-IAM Role and Policy Management
-
-
-
-Flask (Python Web Framework)
-
-
-
-HTML/CSS (Frontend Form)
+HTML, CSS (Frontend)
 
 
 
@@ -216,13 +176,195 @@ Git \& GitHub
 
 
 
-📞 Contact / Author
+👤 Author
 
 Shrimanraj L J
 
-Email: shrimanraj.lj@gmail.com
+GitHub: @Shrimanraj-dev
 
-LinkedIn: https://www.linkedin.com/in/shrimanraj-lj-523a84141
+\# 🧾 Job Portal Web Application (AWS Based)
 
-GitHub: https://github.com/Shrimanraj-dev/JJob-portal
+
+
+\## 📌 Overview
+
+
+
+This project is a cloud-based \*\*Job Portal\*\* where users can submit their \*\*Name\*\*, \*\*Email\*\*, and \*\*Resume\*\*. The application is hosted on \*\*AWS EC2\*\* instances behind a \*\*Load Balancer\*\* with \*\*Auto Scaling\*\*, and it uses \*\*S3\*\*, \*\*DynamoDB\*\*, and \*\*SNS\*\* for backend services.
+
+
+
+The project demonstrates how to integrate various AWS services to build a scalable, reliable, and serverless-like architecture using core cloud components.
+
+
+
+---
+
+
+
+\## 🗂️ Folder Structure
+
+
+
+job-portal/
+
+├── app/
+
+│   ├── main.py
+
+│   └── templates/
+
+│       └── form.html
+
+├── README.md 
+
+
+
+
+
+---
+
+
+
+\## 🚀 Features
+
+
+
+\- Responsive job application form
+
+\- File upload support (Resume)
+
+\- Resume stored in \*\*Amazon S3\*\*
+
+\- Applicant data stored in \*\*DynamoDB\*\*
+
+\- Application ID generated using UUID
+
+\- Real-time notification using \*\*SNS Topic\*\*
+
+\- Scalable backend using \*\*Auto Scaling\*\* and \*\*Application Load Balancer\*\*
+
+
+
+---
+
+
+
+\## 🔧 Setup Instructions
+
+
+
+\### 1. Create S3 Bucket
+
+\- Name: `your-resume-bucket`
+
+\- Enable public access or use pre-signed URLs
+
+
+
+\### 2. Create DynamoDB Table
+
+\- Table Name: `JobApplications`
+
+\- Partition Key: `application\_id` (String)
+
+
+
+\### 3. Create SNS Topic
+
+\- Name: `JobApplicationTopic`
+
+\- Add your email as a subscriber and confirm it
+
+
+
+\### 4. Prepare EC2 Launch Template Script (`launch\_template.sh`)
+
+
+
+```bash
+
+\#!/bin/bash
+
+sudo yum update -y
+
+sudo yum install -y python3 git
+
+git clone https://github.com/Shrimanraj-dev/JJob-portal.git
+
+cd JJob-portal/app
+
+pip3 install flask boto3
+
+python3 main.py
+
+
+
+5\. Create Launch Template
+
+Add the above script in the User Data
+
+
+
+6\. Create Load Balancer \& Auto Scaling Group
+
+Attach the Launch Template
+
+
+
+Set Min/Max EC2 count
+
+
+
+7\. Assign IAM Role to EC2
+
+With permissions:
+
+
+
+AmazonS3FullAccess
+
+
+
+AmazonDynamoDBFullAccess
+
+
+
+AmazonSNSFullAccess
+
+
+
+🛠️ Skills and Tools Demonstrated
+
+AWS EC2, S3, SNS, DynamoDB
+
+
+
+IAM Roles and Policies
+
+
+
+Auto Scaling \& Load Balancer
+
+
+
+Flask (Python)
+
+
+
+HTML, CSS (Frontend)
+
+
+
+Git \& GitHub
+
+
+
+👤 Author
+
+Shrimanraj L J
+
+GitHub: @Shrimanraj-dev
+
+
 
